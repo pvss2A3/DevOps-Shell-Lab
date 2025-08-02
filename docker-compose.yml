@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  devops-shell-lab:
+    build: .
+    container_name: devops-shell-lab
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Optional: Mount logs for monitoring
+      - ./logs:/var/log/nginx
+    labels:
+      - "com.example.description=DevOps Shell Scripting Lab Environment"
+      - "com.example.version=1.0.0"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add monitoring with lightweight tools
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   command: --interval 30 --cleanup
+  #   restart: unless-stopped
