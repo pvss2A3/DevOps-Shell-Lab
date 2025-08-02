@@ -2,6 +2,10 @@
 
 A comprehensive, interactive learning environment for mastering shell scripting from the basics to advanced concepts. This containerized application provides hands-on experience with 10 carefully crafted exercises covering essential DevOps skills.
 
+## 👀 Sneak Peek
+
+![ShellCraft Lab Screenshot](assets/sneakpeak.png)
+
 ## 🚀 Features
 
 - **Interactive Learning**: 10 progressive exercises from beginner to advanced
